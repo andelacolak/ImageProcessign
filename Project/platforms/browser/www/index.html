@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <!--Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <script src="js/main.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <title>Blank App</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <div id="app">
+            <fieldset class="ui-grid-a">
+              <div class="ui-block-a"><button data-theme="a" class="ui-btn" id="slikaj"><i class="fa fa-camera" aria-hidden="false"></i></button></div>
+              <div class="ui-block-b"><button data-theme="b" class="ui-btn" id="gallery"><i class="fa fa-images" aria-hidden="false"></i></button></div>
+            </fieldset>
+            <img scr="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+            alt="Image" class="center" id="img">
+            
+
+            <fieldset class="ui-grid-b" id="filters">
+              <div class="ui-block-a"><button data-theme="a" class="ui-btn" id="invert">Invert</button></div>
+              <div class="ui-block-b"><button data-theme="b" class="ui-btn" id="grayscale">Grayscale</button></div>
+              <div class="ui-block-c"><button data-theme="b" class="ui-btn" id="darken">Darken</button></div>
+            </fieldset>
+        </div>
+    </body>
+</html>
