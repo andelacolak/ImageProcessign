@@ -15,6 +15,12 @@ namespace API
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+               name: "Register",
+               routeTemplate: "api/register",
+               defaults: new { controller = "Account", action = "Register" }
+               );
+
+            config.Routes.MapHttpRoute(
                name: "Darken",
                routeTemplate: "api/darken",
                defaults: new { controller = "Image", action = "DarkenImage" }

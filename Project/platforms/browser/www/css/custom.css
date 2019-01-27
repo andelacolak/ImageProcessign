@@ -14,3 +14,20 @@
   margin-right: auto;
   width: 70%;
 }
+
+.alert {
+	display: none;
+}
+
+.page-holder {
+	width: 90%;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 400%;
+    font-weight: 700;
+}

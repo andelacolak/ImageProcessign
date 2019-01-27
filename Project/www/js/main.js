@@ -1,6 +1,6 @@
 var width = 800;
 var height = 600;
-var baseUri = "http://myIP:55555/api/";
+var baseUri = "http://192.168.5.12:55555/api/";
 var base64Image = "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
 
 //base64

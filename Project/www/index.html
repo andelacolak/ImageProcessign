@@ -3,33 +3,61 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
         <!--Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-        <script src="js/main.js"></script>
-
         <link rel="stylesheet" type="text/css" href="css/custom.css">
         <title>Blank App</title>
     </head>
     <body>
         <script type="text/javascript" src="cordova.js"></script>
         <div id="app">
-            <fieldset class="ui-grid-a">
-              <div class="ui-block-a"><button data-theme="a" class="ui-btn" id="slikaj"><i class="fa fa-camera" aria-hidden="false"></i></button></div>
-              <div class="ui-block-b"><button data-theme="b" class="ui-btn" id="gallery"><i class="fa fa-images" aria-hidden="false"></i></button></div>
-            </fieldset>
-            <img scr="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
-            alt="Image" class="center" id="img">
-            
+            <div data-role="page" id="register">
+                <div class="page-holder">
+                    <h1>Register</h1>
+                    <p>If you already have an account, <a href="#login">sign in here</a></p>
 
-            <fieldset class="ui-grid-b" id="filters">
-              <div class="ui-block-a"><button data-theme="a" class="ui-btn" id="invert">Invert</button></div>
-              <div class="ui-block-b"><button data-theme="b" class="ui-btn" id="grayscale">Grayscale</button></div>
-              <div class="ui-block-c"><button data-theme="b" class="ui-btn" id="darken">Darken</button></div>
-            </fieldset>
+                    <div class="alert alert-danger" id="register-fail" role="alert">
+                      Username is already taken
+                    </div>
+                    <div class="alert alert-danger" id="validation-fail" role="alert">
+                      Validation has failed
+                    </div>
+
+                    <label for="username">Username:</label>
+                    <input name="username" id="username" type="text" value="">
+                    <label for="password">Password:</label>
+                    <input name="password" id="password" type="password" value="" autocomplete="off">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input name="confirmPassword" id="confirmPassword" type="password" value="" autocomplete="off">                    
+                    <button class="ui-shadow ui-btn ui-btn-b ui-corner-all" id="signup">Sign Up</button>
+                </div>
+            </div>
+            
+            <div data-role="page" id="main">
+                <fieldset class="ui-grid-a">
+                  <div class="ui-block-a"><button data-theme="a" class="ui-btn" id="slikaj"><i class="fa fa-camera" aria-hidden="false"></i></button></div>
+                  <div class="ui-block-b"><button data-theme="b" class="ui-btn" id="gallery"><i class="fa fa-images" aria-hidden="false"></i></button></div>
+                </fieldset>
+                <img scr="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+                alt="Image" class="center" id="img">
+                
+
+                <fieldset class="ui-grid-b" id="filters">
+                  <div class="ui-block-a"><button data-theme="a" class="ui-btn" id="invert">Invert</button></div>
+                  <div class="ui-block-b"><button data-theme="b" class="ui-btn" id="grayscale">Grayscale</button></div>
+                  <div class="ui-block-c"><button data-theme="b" class="ui-btn" id="darken">Darken</button></div>
+                </fieldset>
+            </div>
         </div>
+
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/register.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
