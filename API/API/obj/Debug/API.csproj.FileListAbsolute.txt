@@ -57,8 +57,8 @@ C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\bin\System.Net.Http.Formatting
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\bin\System.Web.Http.xml
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\bin\System.Web.Http.WebHost.xml
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\obj\Debug\API.csprojAssemblyReference.cache
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\obj\Debug\API.csproj.CoreCompileInputs.cache
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\obj\Debug\API.csproj.CopyComplete
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\obj\Debug\API.dll
 C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\obj\Debug\API.pdb
+C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\obj\Debug\API.csprojAssemblyReference.cache

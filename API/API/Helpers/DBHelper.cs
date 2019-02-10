@@ -10,7 +10,7 @@ namespace API.Helpers
     {
         private static string connectionString { get; } = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Andela\Desktop\Anđela\pmf\PROMA\API\API\App_Data\AuthDB.mdf;Integrated Security=True;Connect Timeout=30";
 
-        public static void Register(string username, byte[] salt, byte[] hashpass)
+        public static int Register(string username, byte[] salt, byte[] hashpass)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -22,7 +22,7 @@ namespace API.Helpers
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@salt", salt);
                     cmd.Parameters.AddWithValue("@hashpass", hashpass);
-                    cmd.ExecuteNonQuery();
+                    return  cmd.ExecuteNonQuery();
                 }
             }
         }

@@ -1,5 +1,6 @@
 ﻿using API.Hashing_Algorithm;
 using API.Helpers;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -15,15 +16,23 @@ namespace API.Controllers
     public class AccountController : ApiController
     {
         [HttpPost]
-        public HttpStatusCode Register([FromBody] JObject user)
+        public IHttpActionResult Register( [FromBody] JObject user )
         {
-            string username = user["username"].Value<string>();
-            byte[] passBytes = Encoding.ASCII.GetBytes(user["password"].Value<string>());
+            try
+            {
+                string username = user["username"].Value<string>();
+                byte[] passBytes = Encoding.ASCII.GetBytes( user["password"].Value<string>() );
 
-            HashWithSalt hashWithSalt = new HashWithSalt(passBytes);
-            DBHelper.Register(username, hashWithSalt.salt, hashWithSalt.hash);
+                HashWithSalt hashWithSalt = new HashWithSalt( passBytes );
+                DBHelper.Register( username, hashWithSalt.salt, hashWithSalt.hash );
 
-            return HttpStatusCode.OK;
+                return Ok();
+            }
+            catch ( Exception )
+            {
+                return InternalServerError();
+            }
+            
         }
     }
 }

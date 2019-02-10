@@ -1,4 +1,4 @@
-var baseUri = "http://192.168.5.12:55555/api/";
+var baseUri = "http://192.168.5.13:55555/api/";
 
 $(document).ready(function() {
 
@@ -26,11 +26,19 @@ function register(username, password) {
   $.post(baseUri+"register", {
     username: this.username,
     password: this.password
-  }).done(function() {
+  }).done(function(data) {
+    console.log("success", data)
     registrationSucceded();
-  }).fail(function() {
+    Redirect();
+  }).fail(function(data) {
+    console.log("fail", data)
     registrationFailed();
   });
+}
+
+function Redirect() {
+  console.log("redirect");
+  window.location.href = "#main";
 }
 
 function validationSucceded() {
