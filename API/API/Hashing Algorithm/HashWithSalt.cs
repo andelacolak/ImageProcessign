@@ -17,6 +17,12 @@ namespace API.Hashing_Algorithm
             hash = GenerateSaltedHash(password);
         }
 
+        public HashWithSalt(byte[] salt, byte[] password )
+        {
+            this.salt = salt;
+            hash = GenerateSaltedHash( password );
+        }       
+
         private byte[] GenerateSaltedHash(byte[] password)
         {
             HashAlgorithm algorithm = new SHA256Managed();

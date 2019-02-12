@@ -1,26 +1,51 @@
-var baseUri = "http://192.168.5.13:55555/api/";
+var baseUri = "http://192.168.1.149:55555/api/";
 
 $(document).ready(function() {
 
     document.addEventListener("deviceready", function(){
 
       $("#signup").click(function() {
-
-        username = $("#username").val();
-        password = $("#password").val();
-        confPassword = $("#confirmPassword").val();
-
-        if(isFormValid(username, password, confPassword)) {
-          validationSucceded();
-          register(username, password);
-        } else {
-          validationFailed();
-        }
-
+        signup();
       });
+
+      $("#signin").click(function() {
+        signin();
+      });
+
 
     });
 });
+
+function signin() {
+  username = $("#login-username").val();
+  password = $("#login-password").val();
+
+  login(username, password);
+}
+
+function signup() {
+  username = $("#username").val();
+  password = $("#password").val();
+  confPassword = $("#confirmPassword").val();
+
+  if(isFormValid(username, password, confPassword)) {
+    validationSucceded();
+    register(username, password);
+  } else {
+    validationFailed();
+  }
+}
+
+function login(username, password) {
+  $.post(baseUri+"login", {
+    username: this.username,
+    password: this.password
+  }).done(function(data) {
+    Redirect()
+  }).fail(function(data) {
+    alert("fail");
+  });
+}
 
 function register(username, password) {
   $.post(baseUri+"register", {
@@ -37,7 +62,6 @@ function register(username, password) {
 }
 
 function Redirect() {
-  console.log("redirect");
   window.location.href = "#main";
 }
 

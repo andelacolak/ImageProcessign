@@ -34,5 +34,27 @@ namespace API.Controllers
             }
             
         }
+
+
+        [HttpPost]
+        public IHttpActionResult Login( [FromBody] JObject user )
+        {
+            try
+            {
+                string username = user["username"].Value<string>();
+                byte[] passBytes = Encoding.ASCII.GetBytes( user["password"].Value<string>() );
+
+                var salt = (byte[])DBHelper.GetSalt( username );
+                HashWithSalt hashWithSalt = new HashWithSalt( salt, passBytes );
+                DBHelper.Login(username, hashWithSalt.hash);
+
+                return Ok();
+            }
+            catch ( Exception )
+            {
+                return InternalServerError();
+            }
+
+        }
     }
 }

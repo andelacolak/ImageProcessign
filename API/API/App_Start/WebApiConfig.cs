@@ -15,6 +15,12 @@ namespace API
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+               name: "Login",
+               routeTemplate: "api/login",
+               defaults: new { controller = "Account", action = "Login" }
+               );
+
+            config.Routes.MapHttpRoute(
                name: "Register",
                routeTemplate: "api/register",
                defaults: new { controller = "Account", action = "Register" }
